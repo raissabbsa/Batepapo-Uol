@@ -18,7 +18,13 @@
     padding: 22px;
     background-color: #FFFFFF;
     margin-bottom: 26px;
+    position: fixed;
+    top:0;
+    left: 0;
+  }
 
+  main {
+    margin-top: 50px;
   }
 
   header img {
@@ -30,7 +36,7 @@
     font-size: 42px;
   }
 
-  section {
+  .enviaMensagem {
     width: 100%;
     height: 40px;
     display: flex;
@@ -39,6 +45,32 @@
     padding-left: 8px;
     padding-right: 9px;
     font-size: 14px;
+    font-weight: normal;
+    color: black;
+  }
+
+  .enviaStatus {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #DCDCDC;
+    padding-left: 8px;
+    padding-right: 9px;
+    font-size: 14px;
+    font-weight: normal;
+    color: black;
+  }
+  .enviaReservado {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #FFDEDE;
+    padding-left: 8px;
+    padding-right: 9px;
+    font-size: 14px;
+    font-weight: normal;
     color: black;
   }
 
@@ -47,7 +79,7 @@
     color: #B5B0B0;
   }
 
-  .nome {
+  .conteudo {
     margin-right: 8px;
     font-weight: bold;
 
@@ -138,10 +170,58 @@
     font-size: 26px;
   }
 
-  input[type="text"] {
+  footer input[type="text"] {
     border: none;
     width: 300px;
     height: 30px;
     font-size: 18px;
     color: black;
+  }
+
+  .telaInicial {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    top:0;
+    left: 0;
+    background-color: #FFFFFF;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .visivel {
+    display: flex;
+  }
+
+  .telaInicial img {
+    width: 130px;
+    height: 92px;
+    margin-bottom: 94px;
+  }
+  .telaInicial input[type="text"] {
+    width: 261px;
+    height: 400px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #D7D7D7;
+    text-align: center;
+    margin-bottom: 15px;
+    
+  }
+
+  .telaInicial button {
+    width: 109px;
+    height: 45px;
+    text-align: center;
+    background-color: #E7E7E7;
+    border-radius: 9px;
+    font-weight: medium;
+    color: #696969;
+    border: none;
+    
+
   }
