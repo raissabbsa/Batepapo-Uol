@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #F3F3F3;
+    font-family: "Roboto", sans-serif;
+  }
+
+  header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    background-color: #FFFFFF;
+    margin-bottom: 26px;
+
+  }
+
+  header img {
+    width: 75px;
+    height: 53px;
+  }
+
+  header ion-icon {
+    font-size: 42px;
+  }
+
+  section {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding-left: 8px;
+    padding-right: 9px;
+    font-size: 14px;
+    color: black;
+  }
+
+  .hora {
+    margin-right: 10px;
+    color: #B5B0B0;
+  }
+
+  .nome {
+    margin-right: 8px;
+    font-weight: bold;
+
+  }
+
+  .barra-lateral {
+    width: 70%;
+    height: 100%;
+    font-size: 16px;
+    position: fixed;
+    background-color: #FFFFFF;
+    z-index: 3;
+    top: 0;
+    right: 0;
+  }
+
+  .selecionado {display: none;}
+
+  .topo {
+  height: 84px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  font-weight: bold;
+  }
+
+  .contato {
+    display: flex;
+    align-items: center;
+    padding-left: 18px;
+    height: 36px;
+    font-weight: normal;
+
+  }
+  .meio {
+    height: 66px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    font-weight: bold;
+  }
+
+  .contato ion-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+
+  .visibilidade {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .visibilidade > ion-icon {
+    font-size: 12px;
+    margin-right: 27px;
+    color: green;
+    display: none;
+  }
+
+  .esquerda {
+    display: flex;
+    padding-left: 20px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .esquerda ion-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+
+  footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px;
+    background-color: #FFFFFF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  footer ion-icon {
+    font-size: 26px;
+  }
+
+  input[type="text"] {
+    border: none;
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    color: black;
+  }

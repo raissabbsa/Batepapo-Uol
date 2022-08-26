@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+  <head>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Raissa</title>
+  </head>
+
+  <body>
+
+    <header>
+      <img src="imagens/logo.png" />
+      <ion-icon name="people"></ion-icon>
+    </header>
+
+    <main>
+      <section>
+        <div class="hora">1h</div>
+        <div class="nome">joao</div>
+        <div class="mensagem">oi</div>
+      </section>
+    </main>
+
+    <div class="barra-lateral selecionado">
+
+      <div class="topo">Escolha um contato para enviar a mensagem:</div>
+
+      <div class="contato">
+        <ion-icon name="people"></ion-icon>
+        <div class="nome">Todos</div>
+      </div>
+
+      <div class="meio">Escolha a visibilidade:</div>
+
+      <div class="visibilidade">
+
+        <div class="esquerda">
+          <ion-icon name="lock-open"></ion-icon>
+        <div class="tipo">Público</div>
+        </div>
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </div>
+
+      <div class="visibilidade">
+        <div class="esquerda">
+          <ion-icon name="lock-open"></ion-icon>
+        <div class="tipo">Reservadamente</div>
+        </div>
+        <ion-icon name="checkmark-outline"></ion-icon>
+      </div>
+      
+    </div>
+
+    <footer>
+      <input type="text" placeholder="Escreva aqui..." class="adicionarMensagem"/>
+      <ion-icon name="paper-plane-outline"></ion-icon>
+    </footer>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
