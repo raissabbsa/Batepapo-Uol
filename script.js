@@ -1,5 +1,6 @@
 let nome="";
 let nomeAtual;
+let saiuSala;
 
 function entradaSala() {
     
@@ -23,12 +24,12 @@ function tratarErro() {
 
 function tratarSucesso() {
 
-    carregaMensagem();
-    setTimeout(carregaMensagem, 3000);
-    setTimeout(avisapresenca, 5000);
-
     let tela = document.querySelector('.telaInicial');
     tela.classList.remove('visivel');
+
+    carregaMensagem();
+    setInterval(carregaMensagem, 3000);
+    saiuSala = setInterval(avisapresenca, 5000);
     
 }
 
@@ -125,19 +126,18 @@ function avisapresenca() {
     let identidade = {
         name: nomeAtual
     }
-    console.log(identidade);
 
     let pedido = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', identidade);
-    console.log('presente');
 
     pedido.catch(ausente);
 }
 
 function ausente() {
 
-    /*const tela = document.querySelector('.telaInicial');
+    clearInterval(saiuSala);
+    const tela = document.querySelector('.telaInicial');
     tela.classList.add('visivel');
-    entradaSala();*/
+    entradaSala();
     console.log('saiu da sala');
 
 }
