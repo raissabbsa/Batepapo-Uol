@@ -1,4 +1,3 @@
-
 let nome="";
 let nomeAtual;
 
@@ -24,12 +23,13 @@ function tratarErro() {
 
 function tratarSucesso() {
 
+    carregaMensagem();
+    setTimeout(carregaMensagem, 3000);
+    setTimeout(avisapresenca, 5000);
+
     let tela = document.querySelector('.telaInicial');
     tela.classList.remove('visivel');
-
     
-    setTimeout(avisapresenca, 5000);
-    setTimeout(carregaMensagem, 3000);
 }
 
 
@@ -93,7 +93,7 @@ function carregouMensagem (mensagem) {
             }
         }  
     } 
-    divFinal =document.querySelector('.ultimaMensagem') ;
+    let divFinal =document.querySelector('.ultimaMensagem') ;
     divFinal.scrollIntoView();
     console.log('carregou mensagens');
 }
@@ -128,8 +128,9 @@ function avisapresenca() {
     console.log(identidade);
 
     let pedido = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', identidade);
-    pedido.catch(ausente);
     console.log('presente');
+
+    pedido.catch(ausente);
 }
 
 function ausente() {
