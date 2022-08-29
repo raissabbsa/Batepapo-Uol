@@ -4,14 +4,14 @@ let nomeAtual;
 
 function entradaSala() {
     
-    const nomeDigitado = document.querySelector('.telaInicial input')
+    let nomeDigitado = document.querySelector('.telaInicial input')
     nomeAtual = nomeDigitado.value;
 
     nome = {
         name: nomeAtual
     }
 
-    const requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', nome);
+    let requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', nome);
 
     requisicao.then(tratarSucesso);
     requisicao.catch(tratarErro);
@@ -24,25 +24,26 @@ function tratarErro() {
 
 function tratarSucesso() {
 
-    const tela = document.querySelector('.telaInicial');
+    let tela = document.querySelector('.telaInicial');
     tela.classList.remove('visivel');
 
-    carregaMensagem();
+    
     setTimeout(avisapresenca, 5000);
+    setTimeout(carregaMensagem, 3000);
 }
-setTimeout(carregaMensagem, 3000);
+
 
 function carregaMensagem() {
-    const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
+    let promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
     promessa.then(carregouMensagem);
 }
 
 
 function carregouMensagem (mensagem) {
 
-    todasMensagens = mensagem.data;
+    let todasMensagens = mensagem.data;
 
-    const pegaDiv = document.querySelector('main');
+    let pegaDiv = document.querySelector('main');
 
     for(let i=0; i<todasMensagens.length;i++) {
 
@@ -94,11 +95,12 @@ function carregouMensagem (mensagem) {
     } 
     divFinal =document.querySelector('.ultimaMensagem') ;
     divFinal.scrollIntoView();
+    console.log('carregou mensagens');
 }
 
 function enviaMensagem() {
 
-    const pegaMensagem = document.querySelector('footer input');
+    let pegaMensagem = document.querySelector('footer input');
 
     let mensagem = {
         from: nomeAtual,
@@ -106,26 +108,35 @@ function enviaMensagem() {
         text: pegaMensagem.value,
         type: "message"
     }
+    console.log (mensagem);
 
-    requisicao = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
+    const requisicaoEnvio = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagem);
 
-    requisicao.then(enviouMensagem);
+    requisicaoEnvio.then(enviouMensagem);
 }
 
 function enviouMensagem() {
-    carregaMensagem();  
+    carregaMensagem();
+    console.log('mensagem enviada');
 }
 
 
 function avisapresenca() {
-    const pedido = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome);
+    let identidade = {
+        name: nomeAtual
+    }
+    console.log(identidade);
+
+    let pedido = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', identidade);
     pedido.catch(ausente);
+    console.log('presente');
 }
 
 function ausente() {
 
-    const tela = document.querySelector('.telaInicial');
+    /*const tela = document.querySelector('.telaInicial');
     tela.classList.add('visivel');
-    entradaSala();
+    entradaSala();*/
+    console.log('saiu da sala');
 
 }
