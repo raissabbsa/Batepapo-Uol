@@ -168,11 +168,12 @@
 
   footer ion-icon {
     font-size: 26px;
+    cursor: pointer;
   }
 
   footer input[type="text"] {
     border: none;
-    width: 300px;
+    width: 80%;
     height: 30px;
     font-size: 18px;
     color: black;
@@ -222,6 +223,6 @@
     font-weight: medium;
     color: #696969;
     border: none;
-    
+    cursor: pointer;
 
   }
